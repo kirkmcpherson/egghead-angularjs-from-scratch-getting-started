@@ -31,7 +31,7 @@ angular.module('Eggly', [
         }
 
         function setCurrentCategory(category) {
-            $scope.currentCategory = category;
+            $scope.currentCategory = category.name;
 
             cancelCreating();
             cancelEditing();
@@ -65,7 +65,7 @@ angular.module('Eggly', [
         function createBookmark(bookmark) {
             bookmark.id = $scope.bookmarks.length;
             $scope.bookmarks.push(bookmark);
-
+            $scope.isCreating = false;
             resetCreateForm();
         }
 
